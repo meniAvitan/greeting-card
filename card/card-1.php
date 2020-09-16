@@ -1,9 +1,9 @@
 <?php
 
 if(isset($_GET['submit'])){
-    $name = (isset($_GET['name']))?(addslashes($_GET['name'])):" ";
-    $text = (isset($_GET['text']))?(addslashes($_GET['text'])):" ";
-    $wisher = (isset($_GET['wisher']))?(addslashes($_GET['wisher'])):"";
+    $name = (isset($_GET['name']))?addslashes($_GET['name']):" ";
+    $text = (isset($_GET['text']))?addslashes($_GET['text']):" ";
+    $wisher = (isset($_GET['wisher']))?addslashes($_GET['wisher']):"";
     $mysqli=openDb();
     
     $q= "INSERT INTO `card_users`(`id`, `name`, `text`, `wisher`) VALUES ('','$name','$text','$wisher')";
