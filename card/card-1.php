@@ -57,7 +57,8 @@ function openDb(){
     
    
     <main id="main">
-        <h1>הברכה כמעט שם...</h1>
+        <h1>הברכה כמעט מוכנה...</h1>
+        <h2 class="vert-move">&#128071; שתף &#128071;</h2>
         <img class="pic" src="./background.jpg" alt="">
        
         <a class="whatsapp" href="whatsapp://send?text=היי <?php echo $name ?> הכנתי לך הפתעה לחג  &#128071; &#128071; &#128071;        http://riddles.kits4.me/shanaTova/card-2.php?id=<?php echo $id ?>" data-action="share/whatsapp/share"><img class="whatsapp" width="100px"  height= "100px" src="./WhatsApp.svg" alt=""></a>

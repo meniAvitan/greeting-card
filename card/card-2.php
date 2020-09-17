@@ -23,7 +23,13 @@ function openDb(){
 // function closeDb($mysqli){
 //    mysqli_close($mysqli);
 // }
-     
+class StrValTest
+{
+    public function __toString()
+    {
+        return __CLASS__;
+    }
+}   
 
 ?>
 
@@ -39,13 +45,12 @@ function openDb(){
    
     <title>שנה טובה - כרטיס</title>
     <link rel="stylesheet" href="card-2.css">
-    <script type="text/javascript" src="card-1.js"></script>
+    
   
 
     <link href='http://serve.fontsproject.com/css?family=Shuneet:400'
     rel='stylesheet' type='text/css'>
       
- 
    
 </head>
 <body dir="rtl"> 
@@ -55,18 +60,19 @@ function openDb(){
            
         
         <h1 id="title"> שנה טובה ומתוקה</h1><br/>
-
+        <!-- <button onclick="enableMute()" type="button">Mute sound</button> -->
         
     </header>
     <main id="main">
         <img class="pic" src="./background.jpg" alt="">
        <div id="name-res">   <?php echo $row['name']?>  </div>
-       <div id="text-res">   <?php echo $row['text']?>  </div>
+       <div id="text-res">     </div>
        <div id="wisher-res"> <?php echo $row['wisher']?></div>
-      
-      
+     
+       <embed id="sound" src="shana_tova.mp3" width="180" height="90"  loop="true" autostart="true" hidden="true" />
+       
     </main>
-    <embed src="shana_tova.mp3" width="180" height="90" loop="false" autostart="false" hidden="true" />
+    
 
     <footer>
     
@@ -83,19 +89,25 @@ function openDb(){
      
      
     <script>
-        typeWriter();
-        var i = 0;
-        var txt =  <?php echo $row ?> ;
-        var speed = 50;
+        // var muteAudio = document.getElementById("sound");
 
+        //     function enableMute() { 
+        //         muteAudio.muted = true;
+        //     } 
+       
+        var i = 0;
+        var txt=  "<?php echo htmlspecialchars($row['text']) ?>";
+      
+       
         function typeWriter() {
+           
         if (i < txt.length) {
-            document.getElementById("demo").innerHTML += txt.charAt(i);
+            document.getElementById('text-res').innerHTML +=txt.charAt(i);
             i++;
-            setTimeout(typeWriter, speed);
+            setTimeout(typeWriter, 100);
         }
         }
-        
+        typeWriter();
         
     </script>
             

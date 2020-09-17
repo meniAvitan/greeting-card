@@ -71,6 +71,22 @@
         a{
             text-decoration: none;
         }
+        @media screen and (max-width: 920px) and (min-width: 100px){
+    header{
+        grid-column: 1 / span 12;
+        text-align: center;
+       
+    } 
+    main{
+        grid-column: 1 / span 12;
+    }
+    footer{
+        grid-column: 1 / span 12;
+       
+        text-align: center;
+    }
+
+}
 
 
     </style>
@@ -84,8 +100,7 @@
 <main>
     <form id="form" action="card-1.php" method="GET">
         <input    id="name" type="text"        name="name"  maxlength="40" placeholder="למי שאת/ה מאחל/ת" required><br/>
-        <textarea id="text"  maxlength="200"   name="text"  required>שתהיה לך שנה יפה ושמחה, שנה מלאה בשפע וברכה,שנה של שגשוג וקצירת הצלחה, שנה שבה יתגבר הכוח שבך, שנת שלום ושלווה, אהבה, בריאות ונחת!
-        </textarea> <br/>
+        <textarea id="text"  maxlength="200"   name="text"  required>שתהיה לך שנה יפה ושמחה, שנה מלאה בשפע וברכה,שנה של שגשוג וקצירת הצלחה, שנה שבה יתגבר הכוח שבך, שנת שלום ושלווה, אהבה, בריאות ונחת!</textarea> 
         <input    id="wisher" type="text"      name="wisher" maxlength="40" placeholder="שמך" required><br/> 
         <input    id="send_form" type="submit" name="submit" value="תאחל לי"> 
         

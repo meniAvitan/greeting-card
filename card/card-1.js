@@ -1,25 +1,16 @@
-// window.addEventListener('load', () => {
 
-//     // Via Query parameters - GET
-//     /* const params = (new URL(document.location)).searchParams;
-//     const name = params.get('name');
-//     const surname = params.get('surname'); */
-
-//     // Via local Storage
-//     /* const name = localStorage.getItem('NAME');
-//     const surname = localStorage.getItem('SURNAME'); */
-    
-//     const name = sessionStorage.getItem('NAME');
-//     const wisher = sessionStorage.getItem('WISHER');
-//     const text = sessionStorage.getItem('TEXT');
-    
-    
-//     document.getElementById('name-res').innerHTML = name;
-//     document.getElementById('wisher-res').innerHTML = wisher;
-//     document.getElementById('text-res').innerHTML = text;
-    
-
-// })
+        var i = 0;
+        var txt;
+        function typeWriter() {
+            txt =  "<?php echo $row['text']?>" ;
+        if (i < txt.length) {
+            let x = document.getElementById('text-res');
+            x.innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+        }
+        typeWriter();
 
 
 
