@@ -66,7 +66,7 @@ class StrValTest
     <main id="main">
         <img class="pic" src="./background.jpg" alt="">
        <div id="name-res">   <?php echo $row['name']?>  </div>
-       <div id="text-res">     </div>
+       <div id="text-res">    <?php echo htmlspecialchars($row['text']) ?> </div>
        <div id="wisher-res"> <?php echo $row['wisher']?></div>
      
        <embed id="sound" src="shana_tova.mp3" width="180" height="90"  loop="true" autostart="true" hidden="true" />
@@ -95,19 +95,34 @@ class StrValTest
         //         muteAudio.muted = true;
         //     } 
        
-        var i = 0;
-        var txt=  "<?php echo htmlspecialchars($row['text']) ?>";
+        function fading(){
+    var increment = 0.015;
+    var opacity = 0;
+    var instance = window.setInterval(function() {
+        document.getElementById('text-res').style.opacity = opacity
+        opacity = opacity + increment;
+        if(opacity > 1){
+            window.clearInterval(instance);
+        }
+    },100)
+}
+fading();
+
+
+
+        // var i = 0;
+        // var txt=  "";
       
        
-        function typeWriter() {
+        // function typeWriter() {
            
-        if (i < txt.length) {
-            document.getElementById('text-res').innerHTML +=txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        }
-        }
-        typeWriter();
+        // if (i < txt.length) {
+        //     document.getElementById('text-res').innerHTML +=txt.charAt(i);
+        //     i++;
+        //     setTimeout(typeWriter, 100);
+        // }
+        // }
+        // typeWriter();
         
     </script>
             
